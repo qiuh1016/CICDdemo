@@ -31,9 +31,11 @@ jobs:
       run: mvn clean install
 
     - name: Build and Push Docker
-      uses: mr-smithers-excellent/docker-build-push@v4
+      uses: mr-smithers-excellent/docker-build-push@v5
       with: 
-        image: qiuh1016/cididemo
+        image: qiuh1016/cicddemo
+        tags: latest
         registry: docker.io
+        dockerfile: Dockerfile
         username: ${{secrets.DOCKER_NAME}}
         password: ${{secrets.DOCKER_PASSWORD}}
